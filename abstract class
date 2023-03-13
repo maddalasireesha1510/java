@@ -1,0 +1,33 @@
+import java.util.Scanner;
+abstract class Abstractclass{
+    abstract int getvalue();
+    abstract int divisor(int a);
+    
+}
+class cal extends Abstractclass{
+    int getvalue()
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        return a;
+    }
+    int divisor(int a)
+    {
+        int s=1;
+        for(int i=2;i<=a;i++)
+        {
+            if(a%i==0)
+            {
+                s+=i;
+            }
+        }
+        return s;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Abstractclass obj=new cal();
+	    System.out.println(obj.divisor(obj.getvalue()));
+	}
+}
